@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.sebastian-toepfer.refaster</groupId>
+        <artifactId>refaster</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>refaster-samples</artifactId>
+    <packaging>pom</packaging>
+    <name>refaster :: samples</name>
+
+    <modules>
+        <module>badcode</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <compilerArgs>
+                            <arg>-XDcompilePolicy=simple</arg>
+                            <arg>
+                                -Xplugin:ErrorProne \
+                                -XepPatchLocation:IN_PLACE \
+                                -XepPatchChecks:Refaster
+                            </arg>
+                        </compilerArgs>
+                        <showWarnings>true</showWarnings>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>com.google.errorprone</groupId>
+                                <artifactId>error_prone_core</artifactId>
+                                <version>2.23.0</version>
+                            </path>
+                            <path>
+                                <groupId>tech.picnic.error-prone-support</groupId>
+                                <artifactId>refaster-runner</artifactId>
+                                <version>${picnic.error-prone.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
