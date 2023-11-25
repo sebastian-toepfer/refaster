@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
 
         <picnic.error-prone.version>0.14.0</picnic.error-prone.version>
     </properties>

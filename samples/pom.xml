@@ -14,6 +14,7 @@
 
     <modules>
         <module>badcode</module>
+        <module>java17</module>
     </modules>
 
     <build>

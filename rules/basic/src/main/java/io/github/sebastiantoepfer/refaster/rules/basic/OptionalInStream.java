@@ -5,7 +5,7 @@ import com.google.errorprone.refaster.annotation.BeforeTemplate;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class OptinalInStream {
+public class OptionalInStream {
 
     @BeforeTemplate
     <T> Stream<T> mapOptional(final Stream<Optional<T>> stream) {
