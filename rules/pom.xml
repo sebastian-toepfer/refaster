@@ -15,6 +15,7 @@
     <modules>
         <module>basic</module>
         <module>java17</module>
+        <module>java21</module>
     </modules>
 
     <dependencies>
